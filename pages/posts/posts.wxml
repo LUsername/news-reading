@@ -10,4 +10,17 @@
     <swiper-item><image src="/images/vr.png"></image></swiper-item>
     <swiper-item><image src="/images/iqiyi.png"></image></swiper-item>
   </swiper>
+  <view class="post-container">
+    <view class="post-author-date">
+      <image class="post-author" src="/images/avatar/1.png"></image>
+      <text class="post-date">Sep 18 2019</text>
+    </view>
+    <text class="post-title">正是虾肥蟹壮时</text>
+    <image class="post-image" src="/images/post/crab.png"></image>
+    <text class="post-content">稻熟江村蟹正肥，双螯如戟挺青泥，若教纸上翻身看，应见团团董卓脐。金秋菊黄蟹正肥，持螯饮酒滋筋髓。</text>
+    <view class="post-like">
+      <image  class="post-like-image" src="../../images/icon/chat.png"></image><text class="post-like-font">96</text>
+      <image  class="post-like-image" src="../../images/icon/view.png"></image><text class="post-like-font">112</text>
+    </view>
+  </view>
 </view>
