@@ -6,7 +6,7 @@ Page({
   data: {
     indicatorDots: true,
     autoplay: true,
-    interval: 2000,
+    interval: 5000,
     duration: 500,
     circular:true
   },
