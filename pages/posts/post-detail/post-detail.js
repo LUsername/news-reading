@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    collected:false
   },
 
   /**
@@ -13,10 +13,39 @@ Page({
    */
   onLoad: function (options) {
     var postId = options.id;
+    this.data.currentPostId = postId;
     var postData = postsData.postList[postId];
     this.setData({...postData});
+    // var postsCollected={
+    //   0:true,
+    //   1:false,
+    //   2:true,
+    //   ...
+    // }
+    var postsCollected = wx.getStorageSync('postsCollected');
+    if (postsCollected){
+      if (postsCollected[postId]){
+        this.setData({ collected: postsCollected[postId] });
+      }else{
+        postsCollected[postId] = false;
+        wx.setStorageSync('postsCollected', postsCollected);
+      }
+    }else{
+      postsCollected = {};
+      postsCollected[postId] = false;
+      wx.setStorageSync('postsCollected', postsCollected);
+    }
+    
   },
 
+  onCollectionTap:function(){
+    var postsCollected = wx.getStorageSync('postsCollected');
+    var collected = postsCollected[this.data.currentPostId];
+    collected = !collected;
+    postsCollected[this.data.currentPostId] = collected;
+    wx.setStorageSync('postsCollected', postsCollected);
+    this.setData({ collected});
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
