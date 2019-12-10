@@ -11,5 +11,9 @@
     <swiper-item><image src="/images/vr.png"></image></swiper-item>
     <swiper-item><image src="/images/iqiyi.png"></image></swiper-item>
   </swiper>
-  <block wx:for="{{postsContainer}}"><template is="postItem" data="{{item}}"/></block>
+  <block wx:for="{{postsContainer}}">
+    <view bind:tap='onPostTap' data-postId='{{item.postId}}'>
+      <template is="postItem" data="{{...item}}"/>
+    </view>
+  </block>
 </view>
