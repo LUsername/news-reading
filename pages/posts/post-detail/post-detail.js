@@ -45,6 +45,10 @@ Page({
     postsCollected[this.data.currentPostId] = collected;
     wx.setStorageSync('postsCollected', postsCollected);
     this.setData({ collected});
+    wx.showToast({
+      title: collected?'收藏成功':'取消成功',
+      duration:1000
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
